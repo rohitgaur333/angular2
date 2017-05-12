@@ -1,0 +1,20 @@
+
+ <form>
+                <label>First Name: </label><br />
+                <input type="text" name="fname" [(ngModel)]="fname"  /><br />
+                <label>Last Name: </label><br />
+                <input type="text" name="mname" [(ngModel)]="lname" /><br />
+                <button (click)="searchMember()" class="alert-success"> Search </button>
+ </form>
+
+<br />
+  <div class="form-inline" *ngFor="let student of students">
+     <ul>
+      <li> <a [routerLink]="['/student', student._id]">
+        {{ student.fname }} {{ student.lname }}</a>
+      </li>
+     </ul>
+  </div>
+
+  <p *ngIf="message">User Not Found</p>
+
